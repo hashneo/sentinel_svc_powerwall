@@ -22,6 +22,11 @@ jobs:
     - run:
         docker build -t $DOCKER_ORG/$PROJECT_NAME-x86_64:$CIRCLE_SHA1 -t $DOCKER_ORG/$PROJECT_NAME-x86_64:latest . -f Dockerfile.x86_64
 
+    # deploy the image
+    - run: |
+        docker push $DOCKER_ORG/$PROJECT_NAME-x86_64:$CIRCLE_SHA1 &&
+        docker push $DOCKER_ORG/$PROJECT_NAME-x86_64:latest
+
 workflows:
   version: 2
   build-deploy:
