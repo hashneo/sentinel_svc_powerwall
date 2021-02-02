@@ -220,7 +220,7 @@ function _module(config) {
 
                     d['name'] = info.site_name;
                     d['id'] = config.gateway.id;
-                    d['type'] = 'power.ups';
+                    d['type'] = 'energy.gateway';
                     d['current'] = {};
                     d['location'] = {};
                     d['location']['timezone'] = {};
